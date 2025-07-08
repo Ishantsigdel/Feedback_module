@@ -2,15 +2,14 @@
 <odoo>
     <template id="s_feedback_module" name="Feedback Page">
         <section>
-            <!-- <t t-call="website.layout"> -->
                 <div class="container mt-5">
-                    <h2>Leave Feedback</h2>
+                    <h2 style="color:green; margin-bottom: 30px;">Leave Feedback</h2>
                     <form action="/submit_feedback" method="POST">
                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                         <div class="form-group mb-5 ">
                             <input type="text" name="name" class="form-control" placeholder="Your Name" required="required"/>
                         </div>
-                        <div class="form-group mb-5">
+                        <div class="form-group mb-5" >
                             <input type="email" name="email" class="form-control" placeholder="Your Email" required="required"/>
                         </div>
                         <div class="form-group mb-5">
@@ -19,21 +18,31 @@
                         <button type="submit" class="btn btn-primary mb-5">Submit</button>
                     </form>
                 </div>
-            <!-- </t> -->
         </section>
     </template>
 
-    <template id="thank_you_template" name="Thank You Page">
-        <!-- <t t-call="website.layout"> -->
-        <section>
-            <div class="container mt-5">
-                <h2>Thank You!</h2>
-                <p>Your feedback has been submitted.</p>
+<template id="thank_you_template" name="Thank You Page">
+    <section style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background-color: #f9f9f9;">
+        <div class="text-center" style="max-width: 500px; padding: 40px; background-color: white; border: 1px solid #e0e0e0; border-radius: 8px;">
+            <h2 style="font-weight: 600; color: #333;">Thank You!</h2>
+            <p style="color: #666; margin-top: 10px;">Your feedback has been submitted.</p>
+            <a href="/" style="display: inline-block; margin-top: 20px; padding: 10px 20px; border-radius: 4px; background-color: #333; color: white; text-decoration: none;">Go Home</a>
+        </div>
+    </section>
+</template>
+
+<!-- <template id="thank_you_template" name="Thank You Page">
+        <section class="d-flex align-items-center justify-content-center min-vh-100 bg-light">
+            <div class="text-center bg-white border rounded p-5" style="max-width: 500px; width: 100%;">
+                <h2 class="fw-semibold text-dark">Thank You!</h2>
+                <p class="text-muted mt-2">Your feedback has been submitted.</p>
+                <a href="/" class="btn btn-dark mt-3">Go Home</a>
             </div>
-        <!-- </t> -->
         </section>
-    </template>
-</odoo>
+</template> --> 
 
+
+
+</odoo>
 
 

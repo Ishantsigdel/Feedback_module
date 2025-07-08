@@ -13,7 +13,7 @@
 
 
     <record id="view_feedback_form" model="ir.ui.view">
-        <field name="name">my.module.feedback.form</field>
+        <field name="name">my.module.feedback.form</field>  
         <field name="model">my.module.feedback</field>
         <field name="arch" type="xml">
             <form string="Feedback Form">
@@ -32,20 +32,27 @@
         <field name="model">my.module.feedback</field>
         <field name="arch" type="xml">
             <kanban>
-                <field name="name"/>
-                <templates>
-                    <t t-name="kanban-box">
-                        <div class="oe_kanban_global_click o_kanban_record">
-                            <strong>
-                                <field name="name"/>
-                            </strong>
-                            <!-- <div>
-                                        <field name="feedback"/>
-                                    </div> -->
-                        </div>
-                    </t>
-                </templates>
-            </kanban>
+    <field name="name"/>
+    <templates>
+        <t t-name="kanban-box">
+            <div class="o_kanban_record oe_kanban_global_click card shadow-sm p-3 mb-2" style="border-radius:8px;">
+                    <h5 class="card-title text-primary">
+                        <field name="name"/>
+                    </h5>
+                    
+                    <p class="card-text text-muted" style="margin: 0;">
+                        <i class="fa fa-envelope me-1"></i>
+                        <field name="email"/>
+                    </p>
+
+                    <div class="mt-2" style="font-size: 14px; color: #555;">
+                        <field name="message"/>
+                    </div>
+            </div>
+        </t>
+    </templates>
+</kanban>
+
         </field>
     </record>
 
@@ -66,3 +73,6 @@
 
 
 </odoo>
+
+
+

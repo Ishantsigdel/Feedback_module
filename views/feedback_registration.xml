@@ -3,7 +3,9 @@
     <!-- Register the snippet in website builder -->
     <template id="feedback_registration" inherit_id="website.snippets">
         <xpath expr="//div[@id='snippet_structure']/div[@class='o_panel_body']" position="inside">
-            <t t-snippet="feedback_module.s_feedback_module" string="Feedback "/>
+            <t t-snippet="feedback_module.s_feedback_module" string="Feedback "
+             t-thumbnail="/feedback_module/static/description/feedback1.jpg"/>
+
         </xpath>
     </template>
 </odoo> 
